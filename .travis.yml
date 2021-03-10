@@ -7,7 +7,7 @@ before_install:
   - docker build -t kdaout/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run kdaout/docker-react npm run test -- --coverage
+  - docker run -e CI=true kdaout/docker-react npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
